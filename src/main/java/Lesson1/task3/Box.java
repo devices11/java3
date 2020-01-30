@@ -6,14 +6,14 @@ public class Box <T> {
     ArrayList<T> arrayBox = new ArrayList<T>();
 
     // метод добавления фрукта в коробку.
-    public void addFruit(Fruit fruit){
+    public void addFruit(Fruit<?> fruit){
         arrayBox.add((T) fruit.getWeight());
     }
 
     // метод compare, который позволяет сравнить текущую коробку с той,
     // которую подадут в compare в качестве параметра, true - если их веса равны,
     // false в противном случае(коробки с яблоками мы можем сравнивать с коробками с апельсинами);
-    public boolean compare(Box box) {
+    public boolean compare(Box<?> box) {
         Scales scales = new Scales();
         return scales.getWeight(this).equals(scales.getWeight(box));
     }
